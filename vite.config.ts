@@ -18,6 +18,8 @@ export default defineConfig(async ({ mode }) => {
   }
 
   return {
+    // GitHub Pages serves this project from /Tanveer-Oberoi-Website/ rather than /.
+    base: '/Tanveer-Oberoi-Website/',
     plugins,
     envPrefix: ['VITE_', 'NEXT_PUBLIC_'],
     define: processEnvDefines,
