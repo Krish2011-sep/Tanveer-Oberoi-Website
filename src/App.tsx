@@ -36,7 +36,7 @@ const ScrollToTop: React.FC = () => {
 
 export function App() {
   return (
-    <BrowserRouter basename="/Tanveer-Oberoi-Website">
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <div className="min-h-screen bg-[#07090D] text-slate-100 flex flex-col font-sans selection:bg-amber-500 selection:text-black">
         <ScrollToTop />
         <Navbar />
