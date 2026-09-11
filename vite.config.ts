@@ -17,9 +17,12 @@ export default defineConfig(async ({ mode }) => {
     processEnvDefines[`process.env.${key}`] = JSON.stringify(value);
   }
 
+  // GitHub Pages serves this project from /Tanveer-Oberoi-Website/.
+  // Keep / for other hosts such as Vercel so the same source works in both places.
+  const isGitHubPagesBuild = process.env.GITHUB_ACTIONS === 'true';
+
   return {
-    // GitHub Pages serves this project from /Tanveer-Oberoi-Website/ rather than /.
-    base: '/Tanveer-Oberoi-Website/',
+    base: isGitHubPagesBuild ? '/Tanveer-Oberoi-Website/' : '/',
     plugins,
     envPrefix: ['VITE_', 'NEXT_PUBLIC_'],
     define: processEnvDefines,
