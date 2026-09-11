@@ -4,7 +4,7 @@ export const IntroSplash: React.FC = () => {
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
-    const timer = window.setTimeout(() => setVisible(false), 3200);
+    const timer = window.setTimeout(() => setVisible(false), 4200);
     return () => window.clearTimeout(timer);
   }, []);
 
@@ -13,12 +13,12 @@ export const IntroSplash: React.FC = () => {
   return (
     <div className="to-intro" role="status" aria-label="Tanveer Oberoi opening">
       <style>{`
-        .to-intro{position:fixed;inset:0;z-index:99999;overflow:hidden;background:#050608;color:#f5f1e8;display:grid;place-items:center;font-family:var(--font-body,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif);animation:toIntroExit .9s cubic-bezier(.76,0,.24,1) 2.45s forwards;}
-        .to-intro:before{content:"";position:absolute;inset:-20%;background:radial-gradient(circle at 50% 48%,rgba(196,154,76,.14),transparent 24%),radial-gradient(circle at 50% 50%,rgba(255,255,255,.035),transparent 42%);animation:toAura 2.8s ease-in-out both;}
-        .to-intro__grid{position:absolute;inset:0;opacity:.13;background-image:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);background-size:72px 72px;mask-image:radial-gradient(circle at center,black,transparent 72%);animation:toGrid 2.8s ease-out both;}
+        .to-intro{position:fixed;inset:0;z-index:99999;overflow:hidden;background:#050608;color:#f5f1e8;display:grid;place-items:center;font-family:var(--font-body,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif);animation:toIntroExit .9s cubic-bezier(.76,0,.24,1) 3.45s forwards;}
+        .to-intro:before{content:"";position:absolute;inset:-20%;background:radial-gradient(circle at 50% 48%,rgba(196,154,76,.14),transparent 24%),radial-gradient(circle at 50% 50%,rgba(255,255,255,.035),transparent 42%);animation:toAura 3.8s ease-in-out both;}
+        .to-intro__grid{position:absolute;inset:0;opacity:.13;background-image:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);background-size:72px 72px;mask-image:radial-gradient(circle at center,black,transparent 72%);animation:toGrid 3.8s ease-out both;}
         .to-intro__panel{position:absolute;top:0;bottom:0;width:51%;background:#050608;z-index:4;}
-        .to-intro__panel--left{left:0;border-right:1px solid rgba(255,255,255,.035);animation:toPanelLeft 1.05s cubic-bezier(.76,0,.24,1) 2.35s forwards;}
-        .to-intro__panel--right{right:0;border-left:1px solid rgba(255,255,255,.035);animation:toPanelRight 1.05s cubic-bezier(.76,0,.24,1) 2.35s forwards;}
+        .to-intro__panel--left{left:0;border-right:1px solid rgba(255,255,255,.035);animation:toPanelLeft 1.05s cubic-bezier(.76,0,.24,1) 3.35s forwards;}
+        .to-intro__panel--right{right:0;border-left:1px solid rgba(255,255,255,.035);animation:toPanelRight 1.05s cubic-bezier(.76,0,.24,1) 3.35s forwards;}
         .to-intro__beam{position:absolute;left:50%;top:19%;width:1px;height:62%;background:linear-gradient(transparent,rgba(210,174,104,.8),transparent);transform:translateX(-50%) scaleY(0);transform-origin:center;animation:toBeam .75s cubic-bezier(.2,.8,.2,1) .35s forwards;box-shadow:0 0 24px rgba(210,174,104,.35);}
         .to-intro__mark{position:absolute;left:50%;top:50%;transform:translate(-50%,-56%) scale(.78);font-family:var(--font-heading,Arial,sans-serif);font-weight:800;font-size:clamp(88px,18vw,250px);letter-spacing:-.09em;line-height:.8;color:transparent;-webkit-text-stroke:1px rgba(232,210,163,.22);opacity:0;animation:toMark 1.05s cubic-bezier(.16,1,.3,1) .45s forwards;}
         .to-intro__mark:after{content:"TO";position:absolute;inset:0;color:rgba(222,190,126,.08);filter:blur(16px);animation:toGlow 1.5s ease .65s forwards;}
