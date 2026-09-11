@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { FloatingQuickBar } from './components/FloatingQuickBar';
+import { IntroSplash } from './components/IntroSplash';
 
 // Page Components
 import { HomePage } from './pages/HomePage';
@@ -19,16 +20,11 @@ import { WorkshopContactPage } from './pages/WorkshopContactPage';
 import { QuotePage } from './pages/QuotePage';
 import { FaqPage } from './pages/FaqPage';
 
-// Scroll to top helper
 const ScrollToTop: React.FC = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'instant'
-    });
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   }, [pathname]);
 
   return null;
@@ -38,9 +34,10 @@ export function App() {
   return (
     <BrowserRouter basename={import.meta.env.BASE_URL}>
       <div className="min-h-screen bg-[#07090D] text-slate-100 flex flex-col font-sans selection:bg-amber-500 selection:text-black">
+        <IntroSplash />
         <ScrollToTop />
         <Navbar />
-        
+
         <main className="flex-1">
           <Routes>
             <Route path="/" element={<HomePage />} />
@@ -56,7 +53,6 @@ export function App() {
             <Route path="/calculator" element={<QuotePage />} />
             <Route path="/quote" element={<QuotePage />} />
             <Route path="/faq" element={<FaqPage />} />
-            {/* Fallback */}
             <Route path="*" element={<HomePage />} />
           </Routes>
         </main>
